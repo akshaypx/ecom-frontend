@@ -1,4 +1,10 @@
-import { DownOutlined, MenuOutlined, SmileOutlined } from "@ant-design/icons";
+import {
+  DownOutlined,
+  MenuOutlined,
+  SearchOutlined,
+  ShoppingCartOutlined,
+  UserOutlined,
+} from "@ant-design/icons";
 import type { MenuProps } from "antd";
 import { Button, Drawer, Dropdown, Space } from "antd";
 import { useState } from "react";
@@ -14,7 +20,7 @@ const items: MenuProps["items"] = [
         rel="noopener noreferrer"
         href="https://www.antgroup.com"
       >
-        1st menu item
+        Necklace
       </a>
     ),
   },
@@ -26,11 +32,9 @@ const items: MenuProps["items"] = [
         rel="noopener noreferrer"
         href="https://www.aliyun.com"
       >
-        2nd menu item (disabled)
+        Choker
       </a>
     ),
-    icon: <SmileOutlined />,
-    disabled: true,
   },
   {
     key: "3",
@@ -40,15 +44,9 @@ const items: MenuProps["items"] = [
         rel="noopener noreferrer"
         href="https://www.luohanacademy.com"
       >
-        3rd menu item (disabled)
+        Earring
       </a>
     ),
-    disabled: true,
-  },
-  {
-    key: "4",
-    danger: true,
-    label: "a danger item",
   },
 ];
 
@@ -65,7 +63,7 @@ const Header = () => {
 
   const navigate = useNavigate();
   return (
-    <>
+    <div className="fixed w-full top-0 z-50 shadow-md">
       <Drawer
         title={"Moon Creations"}
         placement={"left"}
@@ -81,45 +79,52 @@ const Header = () => {
       >
         <Sidenav />
       </Drawer>
-      <div className="flex justify-around text-white bg-indigo-950 h-20 items-center text-sm font-bold">
-        <div className="lg:hidden">
-          <MenuOutlined onClick={showDrawer} />
-        </div>
-        <div className="">
-          <a href="/">Moon Creations</a>
-        </div>
-        <div className="lg:visible hidden w-1/2 lg:flex flex-row justify-around">
-          <a href="/allproducts">View All</a>
-          <Dropdown menu={{ items }}>
-            <a onClick={(e) => e.preventDefault()}>
-              <Space>
-                Categories
-                <DownOutlined />
-              </Space>
-            </a>
-          </Dropdown>
-          <Dropdown menu={{ items }}>
-            <a onClick={(e) => e.preventDefault()}>
-              <Space>
-                New Arrivals
-                <DownOutlined />
-              </Space>
-            </a>
-          </Dropdown>
-          <a href="/categories">Categories</a>
-        </div>
-        <div>
-          <Button
-            type="primary"
-            onClick={() => {
-              navigate("/login");
-            }}
-          >
-            Login
-          </Button>
+      <div className="sticky top-0 bottom-0 left-0 self-start">
+        <div className="flex justify-between lg:justify-around text-white bg-indigo-950 h-20 items-center text-sm font-bold">
+          <div className="pl-10 lg:hidden">
+            <MenuOutlined onClick={showDrawer} />
+          </div>
+          <div className="">
+            <a href="/">Moon Creations</a>
+          </div>
+          <div className="lg:visible hidden w-1/2 lg:flex flex-row justify-around">
+            <a href="/allproducts">View All</a>
+            <Dropdown menu={{ items }}>
+              <a onClick={(e) => e.preventDefault()}>
+                <Space>
+                  Categories
+                  <DownOutlined />
+                </Space>
+              </a>
+            </Dropdown>
+            <Dropdown menu={{ items }}>
+              <a onClick={(e) => e.preventDefault()}>
+                <Space>
+                  New Arrivals
+                  <DownOutlined />
+                </Space>
+              </a>
+            </Dropdown>
+            <a href="/categories">Categories</a>
+          </div>
+          <div className="lg:visible hidden lg:flex">
+            <Button
+              type="primary"
+              onClick={() => {
+                navigate("/login");
+              }}
+            >
+              Login
+            </Button>
+          </div>
+          <div className="flex w-40 gap-x-10 pr-10 justify-start lg:hidden">
+            <SearchOutlined />
+            <UserOutlined />
+            <ShoppingCartOutlined />
+          </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

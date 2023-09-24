@@ -8,10 +8,8 @@ const Layout = ({ children }: LayoutProps) => {
   return (
     <>
       <div className="w-full flex-row">
-        <div className="">
-          <Header />
-        </div>
-        <div>{children}</div>
+        <Header />
+        <div className="mt-20">{children}</div>
       </div>
     </>
   );
