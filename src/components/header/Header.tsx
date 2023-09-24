@@ -1,9 +1,9 @@
 import { DownOutlined, MenuOutlined, SmileOutlined } from "@ant-design/icons";
 import type { MenuProps } from "antd";
-import { Button, Dropdown, Modal, Space } from "antd";
+import { Button, Drawer, Dropdown, Space } from "antd";
 import { useState } from "react";
-import CustomModal from "../modal/CustomModal";
 import { useNavigate } from "react-router-dom";
+import Sidenav from "../sidenav/Sidenav";
 
 const items: MenuProps["items"] = [
   {
@@ -53,21 +53,37 @@ const items: MenuProps["items"] = [
 ];
 
 const Header = () => {
-  const [modal1Open, setModal1Open] = useState(false);
+  const [open, setOpen] = useState(false);
+
+  const showDrawer = () => {
+    setOpen(true);
+  };
+
+  const onClose = () => {
+    setOpen(false);
+  };
+
   const navigate = useNavigate();
   return (
     <>
-      <Modal
-        title="20px to Top"
-        style={{ top: 20 }}
-        open={modal1Open}
-        onCancel={() => setModal1Open(false)}
-        modalRender={() => <CustomModal setModal1Open={setModal1Open} />}
-        closable={true}
-      ></Modal>
+      <Drawer
+        title={"Moon Creations"}
+        placement={"left"}
+        closable={false}
+        onClose={onClose}
+        open={open}
+        key={`left`}
+        width={340}
+        bodyStyle={{
+          padding: "0px",
+          margin: "0px",
+        }}
+      >
+        <Sidenav />
+      </Drawer>
       <div className="flex justify-around text-white bg-indigo-950 h-20 items-center text-sm font-bold">
         <div className="lg:hidden">
-          <MenuOutlined onClick={() => setModal1Open(true)} />
+          <MenuOutlined onClick={showDrawer} />
         </div>
         <div className="">
           <a href="/">Moon Creations</a>
