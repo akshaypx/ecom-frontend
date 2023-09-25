@@ -7,8 +7,8 @@ interface ProductCardProps {
 const ProductCard = ({ variant }: ProductCardProps) => {
   if (variant === 1) {
     return (
-      <div className="w-40 h-72 lg:w-48 lg:h-72 m-1 mb-2 lg:m-4 lg:mb-8">
-        <div className="w-40 h-48 lg:w-48 lg:h-56 overflow-hidden flex justify-center items-center aspect-[3/4]">
+      <div className="w-36 h-72 lg:w-48 lg:h-72 m-1 mb-2 lg:m-4 lg:mb-8">
+        <div className="w-36 h-48 lg:w-48 lg:h-56 overflow-hidden flex justify-center items-center aspect-[3/4]">
           <img
             src="https://images.unsplash.com/photo-1690474086641-b81f793cb234?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1886&q=80"
             alt="Image"
