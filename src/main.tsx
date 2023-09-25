@@ -35,6 +35,14 @@ const router = createBrowserRouter([
     ),
   },
   {
+    path: "/allproducts/:id",
+    element: (
+      <Layout>
+        <div>Prod</div>
+      </Layout>
+    ),
+  },
+  {
     path: "/login",
     element: <Login />,
   },

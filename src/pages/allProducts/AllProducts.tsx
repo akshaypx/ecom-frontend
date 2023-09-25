@@ -63,6 +63,105 @@ const items: MenuProps["items"] = [
   },
 ];
 
+const products = [
+  {
+    id: 1,
+    title: "Antique Rhodes Designer Hoops",
+    price: 3999,
+    previousPrice: 5999,
+    imageUrl:
+      "https://cdn.shopify.com/s/files/1/0688/7142/2231/products/image_1024x1024_14a35ff8-6c00-4b4e-aef5-1d4f8b151210.jpg?v=1670567427",
+  },
+  {
+    id: 2,
+    title: "Alluring Crystal Bracelet",
+    price: 3999,
+    previousPrice: 5999,
+    imageUrl:
+      "https://cdn.shopify.com/s/files/1/0688/7142/2231/products/image_large_44e127ba-0018-455c-b01f-ef583443e958.jpg?v=1670567506",
+  },
+  {
+    id: 3,
+    title: "Gold Plated Zircon Stone Necklace Set",
+    price: 3999,
+    previousPrice: 5999,
+    imageUrl:
+      "https://cdn.shopify.com/s/files/1/0688/7142/2231/products/zircon-necklace-ruby-green-gold-zircon-necklace-139121-31411111264412.jpg?v=1670566057",
+  },
+  {
+    id: 4,
+    title: "Flower Designed Necklace with Earrings",
+    price: 3999,
+    previousPrice: 5999,
+    imageUrl:
+      "https://cdn.shopify.com/s/files/1/0688/7142/2231/products/image_1024x1024_7223089e-5e83-44a8-a558-812dddefb52c.jpg?v=1670567055",
+  },
+  {
+    id: 5,
+    title: "Gold Plated Zircon Stone Adjustable Chain Choker Set",
+    price: 3999,
+    previousPrice: 5999,
+    imageUrl:
+      "https://cdn.shopify.com/s/files/1/0688/7142/2231/products/zircon-necklace-zircon-necklace-136318-29303913087132.jpg?v=1670566062",
+  },
+  {
+    id: 6,
+    title: "Antique Rhodes Designer Hoops",
+    price: 3999,
+    previousPrice: 5999,
+    imageUrl:
+      "https://cdn.shopify.com/s/files/1/0688/7142/2231/products/image_1024x1024_14a35ff8-6c00-4b4e-aef5-1d4f8b151210.jpg?v=1670567427",
+  },
+  {
+    id: 7,
+    title: "Antique Rhodes Designer Hoops",
+    price: 3999,
+    previousPrice: 5999,
+    imageUrl:
+      "https://cdn.shopify.com/s/files/1/0688/7142/2231/products/image_1024x1024_14a35ff8-6c00-4b4e-aef5-1d4f8b151210.jpg?v=1670567427",
+  },
+  {
+    id: 8,
+    title: "Alluring Crystal Bracelet",
+    price: 3999,
+    previousPrice: 5999,
+    imageUrl:
+      "https://cdn.shopify.com/s/files/1/0688/7142/2231/products/image_large_44e127ba-0018-455c-b01f-ef583443e958.jpg?v=1670567506",
+  },
+  {
+    id: 9,
+    title: "Gold Plated Zircon Stone Necklace Set",
+    price: 3999,
+    previousPrice: 5999,
+    imageUrl:
+      "https://cdn.shopify.com/s/files/1/0688/7142/2231/products/zircon-necklace-ruby-green-gold-zircon-necklace-139121-31411111264412.jpg?v=1670566057",
+  },
+  {
+    id: 10,
+    title: "Flower Designed Necklace with Earrings",
+    price: 3999,
+    previousPrice: 5999,
+    imageUrl:
+      "https://cdn.shopify.com/s/files/1/0688/7142/2231/products/image_1024x1024_7223089e-5e83-44a8-a558-812dddefb52c.jpg?v=1670567055",
+  },
+  {
+    id: 11,
+    title: "Gold Plated Zircon Stone Adjustable Chain Choker Set",
+    price: 3999,
+    previousPrice: 5999,
+    imageUrl:
+      "https://cdn.shopify.com/s/files/1/0688/7142/2231/products/zircon-necklace-zircon-necklace-136318-29303913087132.jpg?v=1670566062",
+  },
+  {
+    id: 12,
+    title: "Antique Rhodes Designer Hoops",
+    price: 3999,
+    previousPrice: 5999,
+    imageUrl:
+      "https://cdn.shopify.com/s/files/1/0688/7142/2231/products/image_1024x1024_14a35ff8-6c00-4b4e-aef5-1d4f8b151210.jpg?v=1670567427",
+  },
+];
+
 const AllProducts = () => {
   const [value, setValue] = useState(1);
   const [layoutStyle, setLayoutStyle] = useState(1);
@@ -133,20 +232,16 @@ const AllProducts = () => {
             </div>
           </div>
           <div className="flex flex-wrap justify-around lg:justify-between">
-            <ProductCard variant={layoutStyle} />
-            <ProductCard variant={layoutStyle} />
             <FloatButton.BackTop />
-            <ProductCard variant={layoutStyle} />
-            <ProductCard variant={layoutStyle} />
-            <ProductCard variant={layoutStyle} />
-            <ProductCard variant={layoutStyle} />
-            <ProductCard variant={layoutStyle} />
-            <ProductCard variant={layoutStyle} />
-            <ProductCard variant={layoutStyle} />
-            <ProductCard variant={layoutStyle} />
-            <ProductCard variant={layoutStyle} />
-            <ProductCard variant={layoutStyle} />
-            <ProductCard variant={layoutStyle} />
+            {products.map((product) => (
+              <a href={`allproducts/${product.id}`}>
+                <ProductCard
+                  variant={layoutStyle}
+                  data={product}
+                  key={product.id}
+                />
+              </a>
+            ))}
           </div>
         </div>
       </div>
