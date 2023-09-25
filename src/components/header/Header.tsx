@@ -1,4 +1,5 @@
 import {
+  CloseOutlined,
   DownOutlined,
   MenuOutlined,
   SearchOutlined,
@@ -6,7 +7,7 @@ import {
   UserOutlined,
 } from "@ant-design/icons";
 import type { MenuProps } from "antd";
-import { Button, Drawer, Dropdown, Space } from "antd";
+import { Button, Drawer, Dropdown, Input, Modal, Space } from "antd";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Sidenav from "../sidenav/Sidenav";
@@ -52,18 +53,28 @@ const items: MenuProps["items"] = [
 
 const Header = () => {
   const [open, setOpen] = useState(false);
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [isCartOpen, setIsCartOpen] = useState(false);
 
   const showDrawer = () => {
     setOpen(true);
+  };
+
+  const showCart = () => {
+    setIsCartOpen(true);
   };
 
   const onClose = () => {
     setOpen(false);
   };
 
+  const onCloseCart = () => {
+    setIsCartOpen(false);
+  };
+
   const navigate = useNavigate();
   return (
-    <div className="fixed w-full top-0 z-50 shadow-md">
+    <div className="fixed w-full top-0 z-50 text-black">
       <Drawer
         title={"Moon Creations"}
         placement={"left"}
@@ -79,8 +90,44 @@ const Header = () => {
       >
         <Sidenav />
       </Drawer>
+      <Drawer
+        className=""
+        title="Your Cart is here"
+        placement={"right"}
+        width={340}
+        onClose={onCloseCart}
+        open={isCartOpen}
+        extra={
+          <Space>
+            <Button className="bg-blue-400 text-white" onClick={onCloseCart}>
+              Checkout
+            </Button>
+          </Space>
+        }
+        closeIcon={<CloseOutlined />}
+      >
+        <p>Some contents...</p>
+        <p>Some contents...</p>
+        <p>Some contents...</p>
+      </Drawer>
+      <Modal
+        className="w-full "
+        title={
+          <Input
+            className="w-full h-10"
+            placeholder="Type here..."
+            suffix={<SearchOutlined />}
+          />
+        }
+        style={{ top: 20 }}
+        open={isSearchOpen}
+        onOk={() => setIsSearchOpen(false)}
+        onCancel={() => setIsSearchOpen(false)}
+        footer={null}
+        closeIcon={null}
+      ></Modal>
       <div className="sticky top-0 bottom-0 left-0 self-start">
-        <div className="flex justify-between lg:justify-around text-white bg-indigo-950 h-20 items-center text-sm font-bold">
+        <div className="flex justify-between lg:justify-around bg-gray-200 h-20 items-center text-sm font-bold">
           <div className="pl-10 lg:hidden">
             <MenuOutlined onClick={showDrawer} />
           </div>
@@ -109,6 +156,7 @@ const Header = () => {
           </div>
           <div className="lg:visible hidden lg:flex">
             <Button
+              className="bg-gray-400 flex items-center"
               type="primary"
               onClick={() => {
                 navigate("/login");
@@ -118,9 +166,9 @@ const Header = () => {
             </Button>
           </div>
           <div className="flex w-40 gap-x-10 pr-10 justify-start lg:hidden">
-            <SearchOutlined />
+            <SearchOutlined onClick={() => setIsSearchOpen(true)} />
             <UserOutlined />
-            <ShoppingCartOutlined />
+            <ShoppingCartOutlined onClick={showCart} />
           </div>
         </div>
       </div>

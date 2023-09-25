@@ -1,0 +1,11 @@
+.zoomin:hover {
+  animation: 2s zoomIn linear;
+}
+@keyframes zoomIn {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(-1);
+  }
+}
