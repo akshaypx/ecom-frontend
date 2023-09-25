@@ -82,7 +82,7 @@ const Header = () => {
         onClose={onClose}
         open={open}
         key={`left`}
-        width={340}
+        width={300}
         bodyStyle={{
           padding: "0px",
           margin: "0px",
@@ -94,7 +94,7 @@ const Header = () => {
         className=""
         title="Your Cart is here"
         placement={"right"}
-        width={340}
+        width={300}
         onClose={onCloseCart}
         open={isCartOpen}
         extra={
@@ -127,7 +127,7 @@ const Header = () => {
         closeIcon={null}
       ></Modal>
       <div className="sticky top-0 bottom-0 left-0 self-start">
-        <div className="flex justify-between lg:justify-around bg-gray-200 h-20 items-center text-sm font-bold">
+        <div className="flex justify-between lg:justify-around bg-gray-200 h-16 items-center text-sm font-bold">
           <div className="pl-10 lg:hidden">
             <MenuOutlined onClick={showDrawer} />
           </div>
