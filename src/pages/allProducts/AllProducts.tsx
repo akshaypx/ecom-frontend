@@ -5,12 +5,11 @@ import {
   Dropdown,
   FloatButton,
   MenuProps,
-  Modal,
   Radio,
   RadioChangeEvent,
 } from "antd";
 import ProductCard from "../../components/productCard/ProductCard";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Checkbox, { CheckboxChangeEvent } from "antd/es/checkbox";
 
 const items: MenuProps["items"] = [
@@ -67,6 +66,10 @@ const items: MenuProps["items"] = [
 const AllProducts = () => {
   const [value, setValue] = useState(1);
   const [layoutStyle, setLayoutStyle] = useState(1);
+
+  useEffect(() => {
+    setLayoutStyle(1);
+  }, []);
 
   const onChangeRadio = (e: RadioChangeEvent) => {
     console.log("radio checked", e.target.value);
