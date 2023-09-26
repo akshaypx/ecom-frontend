@@ -17,7 +17,7 @@ const ProductCard = ({ variant, data }: ProductCardProps) => {
     return (
       <div
         className="group w-36 h-72 lg:w-48 lg:h-80 m-1 mb-2 lg:m-4 lg:mb-8
-      hover:shadow-[rgba(13,_38,_76,_0.19)_0px_9px_20px]
+      lg:hover:shadow-[rgba(13,_38,_76,_0.19)_0px_9px_20px]
       duration-500"
       >
         <div className="relative w-36 h-48 lg:w-48 lg:h-56 overflow-hidden flex justify-center items-center aspect-[3/4] ">
@@ -28,7 +28,7 @@ const ProductCard = ({ variant, data }: ProductCardProps) => {
           />
 
           <CustomButton
-            className="absolute bg-white rounded-none text-black w-40 opacity-0 group-hover:opacity-100 duration-500 bottom-4 ease-in-out "
+            className="absolute bg-white rounded-none text-black w-40 opacity-0 lg:group-hover:opacity-100 duration-500 bottom-4 ease-in-out "
             type="default"
             onClick={() => {}}
           >
