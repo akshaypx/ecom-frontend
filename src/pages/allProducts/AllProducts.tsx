@@ -63,7 +63,7 @@ const items: MenuProps["items"] = [
   },
 ];
 
-const products = [
+export const products = [
   {
     id: 1,
     title: "Antique Rhodes Designer Hoops",
@@ -231,7 +231,7 @@ const AllProducts = () => {
               </Dropdown>
             </div>
           </div>
-          <div className="flex flex-wrap justify-around lg:justify-between">
+          <div className="flex flex-wrap justify-around items-start lg:justify-start">
             <FloatButton.BackTop />
             {products.map((product) => (
               <a href={`allproducts/${product.id}`}>
