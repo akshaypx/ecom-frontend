@@ -1,8 +1,9 @@
-import { ShoppingCartOutlined, ShoppingOutlined } from "@ant-design/icons";
-import { Breadcrumb, Button, Divider } from "antd";
+import { ShoppingCartOutlined } from "@ant-design/icons";
+import { Breadcrumb, Divider } from "antd";
 import { useParams } from "react-router-dom";
 import ProductCard from "../../components/productCard/ProductCard";
 import { products } from "../allProducts/AllProducts";
+import CustomButton from "../../components/button/CustomButton";
 
 const Details = () => {
   const { id } = useParams();
@@ -52,20 +53,22 @@ const Details = () => {
               <p className="font-light text-sm">Tax Included.</p>
             </div>
             <div className="px-4 py-2 w-full">
-              <Button
+              <CustomButton
                 type="default"
                 className="font-bold w-full p-2 h-full text-xl flex justify-center items-center"
+                onClick={() => {}}
               >
                 Add to Cart <ShoppingCartOutlined />
-              </Button>
+              </CustomButton>
             </div>
             <div className="px-4 py-2 w-full">
-              <Button
+              <CustomButton
                 type="primary"
-                className="bg-gray-400 font-bold w-full p-2 h-full text-xl flex justify-center items-center"
+                className="font-bold w-full p-2 h-full text-xl flex justify-center items-center"
+                onClick={() => {}}
               >
-                Buy it Now <ShoppingOutlined />
-              </Button>
+                Buy Now <ShoppingCartOutlined />
+              </CustomButton>
             </div>
           </div>
         </div>

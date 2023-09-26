@@ -1,3 +1,4 @@
+import CustomButton from "../button/CustomButton";
 import "./ProductCard.css";
 
 interface ProductCardProps {
@@ -14,16 +15,28 @@ interface ProductCardProps {
 const ProductCard = ({ variant, data }: ProductCardProps) => {
   if (variant === 1) {
     return (
-      <div className="w-36 h-72 lg:w-48 lg:h-72 m-1 mb-2 lg:m-4 lg:mb-8">
-        <div className="w-36 h-48 lg:w-48 lg:h-56 overflow-hidden flex justify-center items-center aspect-[3/4]">
+      <div
+        className="group w-36 h-72 lg:w-48 lg:h-80 m-1 mb-2 lg:m-4 lg:mb-8
+      hover:shadow-[rgba(13,_38,_76,_0.19)_0px_9px_20px]
+      duration-500"
+      >
+        <div className="relative w-36 h-48 lg:w-48 lg:h-56 overflow-hidden flex justify-center items-center aspect-[3/4] ">
           <img
             src={data.imageUrl}
             alt={data.title}
             className="object-cover object-center w-full h-full align-middle"
           />
+
+          <CustomButton
+            className="absolute bg-white rounded-none text-black w-40 opacity-0 group-hover:opacity-100 duration-500 bottom-4 ease-in-out "
+            type="default"
+            onClick={() => {}}
+          >
+            Add to cart
+          </CustomButton>
         </div>
-        <div className="font-bold mt-1 line-clamp-2">{data.title}</div>
-        <div>
+        <div className="font-bold mt-1 line-clamp-2 px-2">{data.title}</div>
+        <div className="px-2">
           Rs.{data.price + " "}
           <span className="line-through text-gray-500 text-sm">
             Rs.{data.previousPrice}

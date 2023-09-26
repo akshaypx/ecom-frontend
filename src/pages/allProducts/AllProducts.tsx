@@ -1,6 +1,5 @@
 import {
   Breadcrumb,
-  Button,
   Divider,
   Dropdown,
   FloatButton,
@@ -225,9 +224,7 @@ const AllProducts = () => {
                 placement="bottom"
                 arrow={{ pointAtCenter: true }}
               >
-                <Button type="primary" className="bg-gray-400 mr-4">
-                  Sort By
-                </Button>
+                <p className="p-1 pr-2 text-sm">Sort By</p>
               </Dropdown>
             </div>
           </div>

@@ -7,10 +7,11 @@ import {
   UserOutlined,
 } from "@ant-design/icons";
 import type { MenuProps } from "antd";
-import { Button, Drawer, Dropdown, Input, Modal, Space } from "antd";
+import { Drawer, Dropdown, Input, Modal, Space } from "antd";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Sidenav from "../sidenav/Sidenav";
+import CustomButton from "../button/CustomButton";
 
 const items: MenuProps["items"] = [
   {
@@ -99,9 +100,9 @@ const Header = () => {
         open={isCartOpen}
         extra={
           <Space>
-            <Button className="bg-blue-400 text-white" onClick={onCloseCart}>
+            <CustomButton onClick={onCloseCart} type="default">
               Checkout
-            </Button>
+            </CustomButton>
           </Space>
         }
         closeIcon={<CloseOutlined />}
@@ -134,7 +135,7 @@ const Header = () => {
           <div className="">
             <a href="/">Moon Creations</a>
           </div>
-          <div className="lg:visible hidden w-1/2 lg:flex flex-row justify-around">
+          <div className="lg:visible hidden w-1/2 lg:flex flex-row justify-around items-center">
             <a href="/allproducts">View All</a>
             <Dropdown menu={{ items }}>
               <a onClick={(e) => e.preventDefault()}>
@@ -152,18 +153,20 @@ const Header = () => {
                 </Space>
               </a>
             </Dropdown>
-            <a href="/categories">Categories</a>
           </div>
-          <div className="lg:visible hidden lg:flex">
-            <Button
-              className="bg-gray-400 flex items-center"
-              type="primary"
+          <div className="lg:visible hidden lg:flex lg:gap-x-4">
+            <CustomButton onClick={showCart} type="primary">
+              Your Cart
+            </CustomButton>
+            <CustomButton
+              className=""
+              type="default"
               onClick={() => {
                 navigate("/login");
               }}
             >
               Login
-            </Button>
+            </CustomButton>
           </div>
           <div className="flex w-40 gap-x-10 pr-10 justify-start lg:hidden">
             <SearchOutlined onClick={() => setIsSearchOpen(true)} />
