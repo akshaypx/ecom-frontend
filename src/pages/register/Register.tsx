@@ -2,7 +2,7 @@ import { Card, Input } from "antd";
 import "./Register.css";
 import { EyeInvisibleOutlined } from "@ant-design/icons";
 import CustomButton from "../../components/button/CustomButton";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import axios from "axios";
 
 interface ValidationError {
