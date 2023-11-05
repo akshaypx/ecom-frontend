@@ -4,7 +4,7 @@ import { twMerge } from "tailwind-merge";
 interface CustomButtonProps {
   children: React.ReactNode;
   type: "link" | "text" | "default" | "primary" | "dashed" | undefined;
-  onClick: () => void;
+  onClick: (e: React.MouseEvent<HTMLElement, MouseEvent>) => void;
   className?: string;
 }
 
@@ -19,7 +19,7 @@ const CustomButton = ({
       <Button
         className={twMerge(` text-black border-black rounded-none`, className)}
         type="default"
-        onClick={onClick}
+        onClick={(e) => onClick(e)}
       >
         {children}
       </Button>
@@ -29,7 +29,7 @@ const CustomButton = ({
       <Button
         className={twMerge(`text-white rounded-none bg-black`, className)}
         type="primary"
-        onClick={onClick}
+        onClick={(e) => onClick(e)}
       >
         {children}
       </Button>

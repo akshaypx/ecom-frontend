@@ -4,12 +4,12 @@ import {
   CreditCardOutlined,
   RedoOutlined,
 } from "@ant-design/icons";
-import CustomCarousel from "../../components/carousel/CustomCarousel";
 import "./Home.css";
 import CategoryCard from "../../components/category/CategoryCard";
 import { FloatButton } from "antd";
 import { products } from "../allProducts/AllProducts";
 import ProductCard from "../../components/productCard/ProductCard";
+import Hero from "../../components/hero/Hero";
 
 export const Categories = [
   {
@@ -52,9 +52,10 @@ export const Categories = [
 const Home = () => {
   return (
     <>
-      <div>
+      {/* <div>
         <CustomCarousel />
-      </div>
+      </div> */}
+      <Hero />
       <div className="flex flex-col flex-wrap sm:flex-row sm:min-h-[200px] sm:items-center">
         <div className="w-full sm:w-1/4 h-full flex p-4 sm:justify-center">
           <div className="w-12 h-12 flex justify-center items-center ">

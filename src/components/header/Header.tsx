@@ -170,7 +170,11 @@ const Header = () => {
           </div>
           <div className="flex w-40 gap-x-10 pr-10 justify-start lg:hidden">
             <SearchOutlined onClick={() => setIsSearchOpen(true)} />
-            <UserOutlined />
+            <UserOutlined
+              onClick={() => {
+                navigate("/login");
+              }}
+            />
             <ShoppingCartOutlined onClick={showCart} />
           </div>
         </div>
