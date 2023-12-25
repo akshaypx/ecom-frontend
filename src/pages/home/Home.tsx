@@ -24,7 +24,7 @@ export const Categories = [
     title: "Ring",
     collectionItems: 146,
     imageUrl:
-      "https://images.unsplash.com/photo-1627293530222-0df384f8a419?q=80&w=1780&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://images.unsplash.com/photo-1481980235850-66e47651e431?q=80&w=1888&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     id: 3,
