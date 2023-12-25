@@ -17,35 +17,35 @@ export const Categories = [
     title: "Earring",
     collectionItems: 146,
     imageUrl:
-      "https://starjewellery.in/cdn/shop/files/Earring.webp?v=1670567476",
+      "https://images.unsplash.com/photo-1610214054205-7595cba9cd23?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     id: 2,
     title: "Ring",
     collectionItems: 146,
     imageUrl:
-      "https://starjewellery.in/cdn/shop/files/10_1800x1800_04488dd1-be45-4d66-b2c5-bc4dd7ff7343.webp?v=1670567466",
+      "https://images.unsplash.com/photo-1627293530222-0df384f8a419?q=80&w=1780&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     id: 3,
     title: "Necklace",
     collectionItems: 146,
     imageUrl:
-      "https://starjewellery.in/cdn/shop/files/necklace.webp?v=1670567431",
+      "https://images.unsplash.com/photo-1611652022419-a9419f74343d?q=80&w=1888&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     id: 4,
     title: "Choker",
     collectionItems: 146,
     imageUrl:
-      "https://starjewellery.in/cdn/shop/files/choker_2.jpg?v=1670567448",
+      "https://images.unsplash.com/photo-1673283630723-05bf038ec0a8?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     id: 5,
     title: "Bracelet",
     collectionItems: 146,
     imageUrl:
-      "https://starjewellery.in/cdn/shop/files/990011087-2_2_256x256_e54eaedc-406d-4f41-8b59-dab1c0d07e30.webp?v=1670567457",
+      "https://images.unsplash.com/photo-1611235115922-72aece5cf686?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
 ];
 
